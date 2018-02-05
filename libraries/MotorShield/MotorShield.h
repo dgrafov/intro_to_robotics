@@ -36,9 +36,8 @@ public:
   void move(int speed);
   void stop();
   void turn(int speed);
-private:
   State getState() const;
-
+private:
   Motor mMotor1 = {12, 9, 3};
   Motor mMotor2 = {13, 8, 11};
   State m_state = STOPPED;
