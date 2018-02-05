@@ -27,7 +27,7 @@ MotorShield::MotorShield(const Motor & m1, const Motor & m2)
   , mMotor2(m2)
 { }
 
-void MotorShield::init() const
+void MotorShield::init()
 {
   
   pinMode(mMotor1.dirPin, OUTPUT); 
@@ -41,25 +41,62 @@ void MotorShield::init() const
   pinMode(mMotor2.speedPin, OUTPUT);
 
   digitalWrite(mMotor2.brakePin, HIGH); 
+
+  m_state = STOPPED;
 }
 
-void MotorShield::move(int speed) const
+void MotorShield::move(int speed)
 {
   startMotor(speed, mMotor1);    
   startMotor(speed, mMotor2);
+
+  if (speed > 0)
+  {
+    m_state = FORWARD;
+  }
+  else if (speed < 0)
+  {
+    m_state = BACKWARD;
+  }
+  else
+  {
+    m_state = STOPPED;
+  }
 }
 
-void MotorShield::stop() const
+void MotorShield::stop()
 {
   digitalWrite(mMotor1.brakePin, HIGH); 
   digitalWrite(mMotor2.brakePin, HIGH);
+
+  m_state = STOPPED;
 }
 
-void MotorShield::turn(int speed) const
+void MotorShield::turn(int speed)
 {
   startMotor(speed, mMotor1);    
   startMotor(-speed, mMotor2);
+
+  if (speed > 0)
+  {
+    m_state = TURN_POSITIVE;
+  }
+  else if (speed < 0)
+  {
+    m_state = TURN_NEGATIVE;
+  }
+  else
+  {
+    m_state = STOPPED;
+  }
 }
+
+MotorShield::State MotorShield::getState() const
+{
+    return m_state;
+}
+
+
 
 
 

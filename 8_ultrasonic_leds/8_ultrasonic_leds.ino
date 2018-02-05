@@ -34,7 +34,6 @@ void loop() {
     if (num < LEDS_NUM) 
     {
       leds.setLeds(LED_MASKS[num]);
-      Serial.println(LED_MASKS[num]);
     }
     else
     {

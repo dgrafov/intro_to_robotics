@@ -18,18 +18,29 @@ struct Motor
 class MotorShield
 {
 public:
+  enum State
+  {
+    STOPPED,
+    FORWARD,
+    BACKWARD,
+    TURN_POSITIVE,
+    TURN_NEGATIVE
+  };
+
   // default constructor: two motors with default pin selection
   MotorShield() = default;  
   // constructor with two motors, user's pin selection
   MotorShield(const Motor & m1, const Motor & m2); 
 
-  void init() const;
-  void move(int speed) const;
-  void stop() const;
-  void turn(int speed) const;
+  void init();
+  void move(int speed);
+  void stop();
+  void turn(int speed);
 private:
+  State getState() const;
+
   Motor mMotor1 = {12, 9, 3};
   Motor mMotor2 = {13, 8, 11};
- 
+  State m_state = STOPPED;
 };
 
