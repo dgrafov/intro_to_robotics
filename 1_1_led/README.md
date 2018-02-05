@@ -22,3 +22,4 @@ One LED blinks with a constant frequency
 
 ## Notes
 * I used 1 KOhm resistor for protecting the LED however any with values 220 Ohm-1 KOhm can be used
+
