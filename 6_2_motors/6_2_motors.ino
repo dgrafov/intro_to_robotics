@@ -1,6 +1,6 @@
-#include "ArduinoMotorShield.h"
+#include "MotorShield.h"
 
-ArduinoMotorShield shield;
+MotorShield shield;
 
 //#define BATTERY
 

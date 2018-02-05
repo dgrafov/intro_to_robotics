@@ -1,4 +1,4 @@
-#include "ArduinoMotorShield.h"
+#include "MotorShield.h"
 
 void startMotor(int speed, const Motor& motor)
 {
@@ -22,12 +22,12 @@ void startMotor(int speed, const Motor& motor)
 }
 
 
-ArduinoMotorShield::ArduinoMotorShield(const Motor & m1, const Motor & m2)
+MotorShield::MotorShield(const Motor & m1, const Motor & m2)
   : mMotor1(m1)
   , mMotor2(m2)
 { }
 
-void ArduinoMotorShield::init() const
+void MotorShield::init() const
 {
   
   pinMode(mMotor1.dirPin, OUTPUT); 
@@ -43,19 +43,19 @@ void ArduinoMotorShield::init() const
   digitalWrite(mMotor2.brakePin, HIGH); 
 }
 
-void ArduinoMotorShield::move(int speed) const
+void MotorShield::move(int speed) const
 {
   startMotor(speed, mMotor1);    
   startMotor(speed, mMotor2);
 }
 
-void ArduinoMotorShield::stop() const
+void MotorShield::stop() const
 {
   digitalWrite(mMotor1.brakePin, HIGH); 
   digitalWrite(mMotor2.brakePin, HIGH);
 }
 
-void ArduinoMotorShield::turn(int speed) const
+void MotorShield::turn(int speed) const
 {
   startMotor(speed, mMotor1);    
   startMotor(-speed, mMotor2);

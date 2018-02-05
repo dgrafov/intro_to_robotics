@@ -15,13 +15,13 @@ struct Motor
 };
 
 
-class ArduinoMotorShield
+class MotorShield
 {
 public:
   // default constructor: two motors with default pin selection
-  ArduinoMotorShield() = default;  
+  MotorShield() = default;  
   // constructor with two motors, user's pin selection
-  ArduinoMotorShield(const Motor & m1, const Motor & m2); 
+  MotorShield(const Motor & m1, const Motor & m2); 
 
   void init() const;
   void move(int speed) const;

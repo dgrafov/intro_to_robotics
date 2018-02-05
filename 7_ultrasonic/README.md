@@ -16,4 +16,5 @@ Simple ultrasonic sensor example: measures the distance to the sensor (in cm) an
 * this example can be used to test ultrasonic sensor
 * instead of custom Ultrasonic class the [NewPing](https://playground.arduino.cc/Code/NewPing) library can be used (works with different sensors and Arduino boards)
 
-
+## Requirements
+* Ultrasonic library must be imported to Arduino IDE. See libraries/README.md and libraries/Ultrasonic

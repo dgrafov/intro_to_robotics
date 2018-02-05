@@ -23,5 +23,8 @@ platform goes forward, goes backward, turns in one direction, turns in the oppos
 * structures
 * keyword "default"
 
+## Requirements
+* MotorShield library must be imported to Arduino IDE. See libraries/README.md and libraries/MotorShield
+
 
 

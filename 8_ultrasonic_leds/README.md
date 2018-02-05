@@ -13,13 +13,10 @@ Six LEDs show the distance measured by an ultrasonic sensor. The smaller distanc
 ## New hardware knowledge
 
 ## New C++ knowledge
-* Re-use of classes (LedLine, Ultrasonic)
 
-## Notes
-* files of LedLine and Ultrasonic classes can be zipped and added to Arduino IDE as a library as soon as we used it already in 2 
-examples
-* in next example external libraries usage will be shown (e.g. in remote-controlled wheel platform)
-
+## Requirements
+* LedLine and Ultrasonic libraries must be imported to Arduino IDE. See libraries/README.md, libraries/LedLine and 
+libraries/Ultrasonic
 
 
 
