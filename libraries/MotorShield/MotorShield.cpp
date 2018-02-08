@@ -11,6 +11,13 @@ void startMotor(int speed, const Motor& motor)
   {
     digitalWrite(motor.dirPin, HIGH);
   }
+
+  if (motor.speedPercent != 100) 
+  {
+    speed = speed * motor.speedPercent / 100;  
+  }
+
+  Serial.println(speed);
   
   if (speed > 255) 
   {
@@ -26,6 +33,12 @@ MotorShield::MotorShield(const Motor & m1, const Motor & m2)
   : mMotor1(m1)
   , mMotor2(m2)
 { }
+
+MotorShield::MotorShield(int m1SpeedPercent, int m2SpeedPercent)
+{
+  mMotor1.speedPercent = m1SpeedPercent;
+  mMotor2.speedPercent = m2SpeedPercent;  
+}
 
 void MotorShield::init()
 {
