@@ -13,9 +13,6 @@ Robot moves until faces obstacles, when turns until finds the way out. After tur
 
 ## New C++ knowledge
 
-## Notes
-Not tested yet!!!
-
 ## Requirements
 * MotorShield and Ultrasonic libraries must be imported to Arduino IDE. See libraries/README.md, libraries/MotorShield and 
 libraries/Ultrasonic
