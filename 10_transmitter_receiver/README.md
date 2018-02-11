@@ -18,6 +18,7 @@ and prints them to the console output.
 * RF24 library must be imported to Arduino IDE. See libraries/README.md and libraries/externals/RF24 
 
 ## Notes
+* This example can be used to test NRF24L01 radio modules
 * There is one sketch for the transmitter and the receiver
 * Arduino SPI pins from ICSP head are connected to GPIO pins in the following way:
   * ICSP 4 (MOSI) -> GPIO 11
