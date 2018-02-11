@@ -7,5 +7,8 @@ The classes I put here **do not pretend to be production quality libraries** (an
 all the necessary information - only code). They were puth here just to avoid copying files from one example 
 to another.
 
+The external libraries are situated in ./externals and taken as is from other GIT repositories. They can be zipped
+and installed to Arduino IDE (see below).
+
 ## Installation
 [How to install .zip library in Arduino IDE](https://www.arduino.cc/en/Guide/Libraries#toc4)
