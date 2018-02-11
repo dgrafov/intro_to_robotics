@@ -9,7 +9,9 @@ to another.
 
 The external libraries are situated in ./externals and taken as is from other GIT repositories. They can be zipped
 and installed to Arduino IDE (see below). To clone submodules after clonning the repository you can use the command:
+```
 git submodule update --init --recursive
+```
 Check [git-submodule(1)](https://www.kernel.org/pub/software/scm/git/docs/git-submodule.html) for additional details.
 
 ## Installation
