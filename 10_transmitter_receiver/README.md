@@ -1,7 +1,7 @@
 # 10. Radio transmitter and receiver
 
 ## Description
-Tranmitter board is contnuously sending messages via radio channnel. Receiver board gets the messages 
+Transmitter board is continuously sending messages via radio channnel. Receiver board gets the messages 
 and prints them to the console output.
 
 ## Hardware used
