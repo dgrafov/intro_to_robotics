@@ -15,7 +15,7 @@ and prints them to the console output.
 * switch
 
 ## Requirements
-* RF24 library must be imported to Arduino IDE. See libraries/README.md and libraries/externals/RF24 
+* [RF24](https://github.com/nRF24/RF24) library must be imported to Arduino IDE (available in Arduino IDE library manager).
 
 ## Notes
 * This example can be used to test NRF24L01 radio modules

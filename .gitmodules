@@ -1,3 +1,0 @@
-[submodule "libraries/externals/RF24"]
-	path = libraries/externals/RF24
-	url = git@github.com:nRF24/RF24.git
