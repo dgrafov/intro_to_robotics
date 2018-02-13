@@ -22,7 +22,7 @@ RF24 radio(CE_PIN, CSN_PIN);
 void setup() {
   radio.begin();
   radio.openWritingPipe(address);
-  radio.setPALevel(RF24_PA_MIN);
+  radio.setPALevel(RF24_PA_LOW);
   radio.stopListening();
 }
 
