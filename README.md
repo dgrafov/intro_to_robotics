@@ -19,8 +19,3 @@ Videos for the examples can be found in [shared folder](https://drive.google.com
 The classes which are reused in several examples are situated in the **libraries** folder and can be included as libraries
 (.zip files) to Arduino IDE
 
-## Notes
-The work is ongoing: at the moment two more examples are planned: 
-* autonomous obstacles avoidng robot (wheel platform with motors + ultrasonic sensor)
-* remote controlled robot (wheel platform with motors and receiver + separate arduino with joystick and transmitter)
-
