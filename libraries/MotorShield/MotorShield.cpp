@@ -16,8 +16,6 @@ void startMotor(int speed, const Motor& motor)
   {
     speed = speed * motor.speedPercent / 100;  
   }
-
-  Serial.println(speed);
   
   if (speed > 255) 
   {
