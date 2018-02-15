@@ -15,19 +15,20 @@ const int CSN_PIN = A5;
 
 const byte address[] = "00001";
 
-RF24 radio(CE_PIN, CSN_PIN); 
+RF24 radio(CE_PIN, CSN_PIN);
 MotorShield shield;
 
-enum Action 
+enum Action
 {
   FORWARD = 1,
   BACKWARD,
   TURN_LEFT,
   TURN_RIGHT,
-  STOP  
+  STOP
 };
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
   radio.begin();
   radio.openReadingPipe(0, address);
@@ -39,15 +40,16 @@ void setup() {
 
 Action curAction = STOP;
 
-void loop() {
-  if (radio.available()) 
+void loop()
+{
+  if (radio.available())
   {
     Action action = STOP;
     radio.read(&action, sizeof(action));
 
     Serial.println(action);
-    
-    if (action != curAction) 
+
+    if (action != curAction)
     {
       curAction = action;
       Serial.println(curAction);
@@ -69,6 +71,6 @@ void loop() {
           shield.stop();
           break;
       }
-    }   
+    }
   }
 }

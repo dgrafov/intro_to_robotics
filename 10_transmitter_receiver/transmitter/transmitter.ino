@@ -1,5 +1,3 @@
-
-#include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
 
@@ -19,7 +17,8 @@ const char PHRASE_6[] = "OK.";
 
 RF24 radio(CE_PIN, CSN_PIN);
 
-void setup() {
+void setup()
+{
   radio.begin();
   radio.openWritingPipe(address);
   radio.setPALevel(RF24_PA_LOW);
@@ -28,9 +27,9 @@ void setup() {
 
 int phrase = 0;
 
-void loop() {
-
-  switch(phrase) 
+void loop()
+{
+  switch(phrase)
   {
     case 0:
     case 1:
@@ -59,9 +58,9 @@ void loop() {
     case 10:
       radio.write(&PHRASE_6, sizeof(PHRASE_6));
       delay(1000);
-      break;        
+      break;
   }
-  
+
   phrase = (phrase >= 10 ? 0 : phrase+1);
   delay(1000);
 }

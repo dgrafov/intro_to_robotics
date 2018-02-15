@@ -1,5 +1,3 @@
-
-#include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
 
@@ -15,16 +13,17 @@ const int READINGS_THRESHOLD = 5;
 
 RF24 radio(CE_PIN, CSN_PIN);
 
-enum Action 
+enum Action
 {
   FORWARD = 1,
   BACKWARD,
   TURN_LEFT,
   TURN_RIGHT,
-  STOP  
+  STOP
 };
 
-void setup() {
+void setup()
+{
   radio.begin();
   radio.openWritingPipe(address);
   radio.setPALevel(RF24_PA_LOW);
@@ -36,9 +35,9 @@ Action lastSentAction = STOP;
 Action lastReadAction = STOP;
 int numSameReadings = 0;
 
-void loop() {
-
-  int x = analogRead(JOYSTICK_X); 
+void loop()
+{
+  int x = analogRead(JOYSTICK_X);
   int y = analogRead(JOYSTICK_Y);
 
   // calculate an action for the robot
@@ -61,16 +60,16 @@ void loop() {
   }
 
   // filter a bit
-  if (lastReadAction != action) 
+  if (lastReadAction != action)
   {
     numSameReadings = 0;
-    lastReadAction = action;  
+    lastReadAction = action;
   }
-  else if (++numSameReadings >= READINGS_THRESHOLD && lastReadAction != lastSentAction) 
+  else if (++numSameReadings >= READINGS_THRESHOLD && lastReadAction != lastSentAction)
   {
     Serial.println(lastReadAction);
     lastSentAction = lastReadAction;
-    radio.write(&lastReadAction, sizeof(lastReadAction));    
+    radio.write(&lastReadAction, sizeof(lastReadAction));
   }
   delay(50);
 }
