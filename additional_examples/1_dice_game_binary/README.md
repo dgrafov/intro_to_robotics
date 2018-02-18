@@ -1,4 +1,4 @@
-# 5. Dice game (binary)
+# 1. Dice game (binary)
 
 ## Description 
 When the button is pressed, four LEDs perform a simple animation, when the button is released, 

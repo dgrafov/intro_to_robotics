@@ -1,4 +1,4 @@
-# 6. Two motors
+# 5. Two motors
 
 ## Description
 Two motors connected to a motor shield perform following actions in a loop: both go forward, both go 
@@ -19,9 +19,7 @@ platform goes forward, goes backward, turns in one direction, turns in the oppos
 * analog pins
 
 ## New C++ knowledge
-* local functions in class file ("perfect incapsulation")
-* structures
-* keyword "default"
+* external libraries (custom MotorShield)
 
 ## Requirements
 * MotorShield library must be imported to Arduino IDE. See libraries/README.md and libraries/MotorShield

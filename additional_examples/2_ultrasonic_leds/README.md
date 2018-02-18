@@ -1,4 +1,4 @@
-# 8. Ultrasonic with six LEDs
+# 2. Ultrasonic with six LEDs
 
 ## Description
 Six LEDs show the distance measured by an ultrasonic sensor. The smaller distance the more LEDs are on.

@@ -1,4 +1,4 @@
-# 7. Ultrasonic
+# 6. Ultrasonic
 
 ## Description
 Simple ultrasonic sensor example: measures the distance to the sensor (in cm) and outputs reading to the console

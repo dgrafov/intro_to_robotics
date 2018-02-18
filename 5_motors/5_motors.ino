@@ -2,21 +2,15 @@
 
 MotorShield shield;
 
-//#define BATTERY
+const int SPEED = 200;
 
-#ifdef BATTERY
-const int SPEED = 127;
-#else
-const int SPEED = 255;
-#endif
-
-const int RUN_MS = 2000;
-const int STOP_MS = 1000;
-const int TURN_MS = 1000;
+int RUN_MS = 2000;
+int STOP_MS = 1000;
+int TURN_MS = 1000;
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(9600);
   shield.init();
 }
 

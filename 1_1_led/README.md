@@ -17,7 +17,6 @@ One LED blinks with a constant frequency
 
 ## New C++ knowledge
 * variables (built-in types)
-* scope of variables (local, global)
 * Arduino functions (setup, loop)
 
 ## Notes

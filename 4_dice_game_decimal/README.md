@@ -13,11 +13,8 @@ LEDs show a random number between 1 and 6 (number of LEDs turned on is a given n
 * 1 * Button
 
 ## New hardware knowledge
-* Serial output
 
 ## New C++ knowledge
-* console output (Serial.println)
-* custom functions
+* functions
 
-## Notes: 
-* any of for loop can be supbstitued by while loop for an example 
+ 

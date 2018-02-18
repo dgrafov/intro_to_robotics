@@ -12,9 +12,5 @@ Six LEDs in a line perform a simple animation with a constant speed
 ## New hardware knowledge
 
 ## New C++ knowledge
-* arrays
 * for loop 
-* auto
 
-## Notes
-* Instead of range-based for loop index based can be used as an example

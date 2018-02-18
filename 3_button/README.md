@@ -15,4 +15,3 @@ Button controls built-in LED
 ## New C++ knowledge
 * function return values
 * if-else
-* ternary operator (optional)

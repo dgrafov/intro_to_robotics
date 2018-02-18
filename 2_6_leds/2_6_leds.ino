@@ -1,23 +1,21 @@
-
-const int LED_PINS[] = {7, 8, 9, 10, 11, 12};
-const int DELAY = 200;
-
 void setup()
 {
-  for (const auto pin : LED_PINS)
-  {
-    pinMode(pin, OUTPUT);
-  }   
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(7, OUTPUT);
 }
+
 
 void loop()
 {
-  for (const auto pin : LED_PINS) 
+  for(int i = 7; i <= 12; i++)
   {
-    digitalWrite(pin, HIGH);
-    delay(DELAY);                 
-    digitalWrite(pin, LOW); 
-    delay(DELAY);    
+    digitalWrite(i, HIGH);
+    delay(500);    
+    digitalWrite(i, LOW);
   }
-  
 }
+
