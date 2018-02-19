@@ -1,19 +1,19 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 
-const int CE_PIN = 7;
-const int CSN_PIN = 8;
+int CE_PIN = 7;
+int CSN_PIN = 8;
 
-const byte address[] = "00001";
+byte address[] = "00001";
 
-const char PHRASE_1[] = "You talkin' to me?";
-const char PHRASE_2[] = "Then who the hell else";
-const char PHRASE_2_5[] = "are you talking...";
-const char PHRASE_3[] = "Well I'm the only one here.";
-const char PHRASE_4[] = "Who the fuck do you think";
-const char PHRASE_4_5[] = "you're talking to?";
-const char PHRASE_5[] = "Oh yeah?";
-const char PHRASE_6[] = "OK.";
+char PHRASE_1[] = "You talkin' to me?";
+char PHRASE_2[] = "Then who the hell else";
+char PHRASE_2_5[] = "are you talking...";
+char PHRASE_3[] = "Well I'm the only one here.";
+char PHRASE_4[] = "Who the fuck do you think";
+char PHRASE_4_5[] = "you're talking to?";
+char PHRASE_5[] = "Oh yeah?";
+char PHRASE_6[] = "OK.";
 
 RF24 radio(CE_PIN, CSN_PIN);
 

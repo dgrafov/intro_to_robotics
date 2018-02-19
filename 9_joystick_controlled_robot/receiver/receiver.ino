@@ -2,18 +2,12 @@
 #include "RF24.h"
 #include "MotorShield.h"
 
-//#define BATTERY
+int SPEED = 255;
 
-#ifdef BATTERY
-const int SPEED = 127;
-#else
-const int SPEED = 255;
-#endif
+int CE_PIN = A4;
+int CSN_PIN = A5;
 
-const int CE_PIN = A4;
-const int CSN_PIN = A5;
-
-const byte address[] = "00001";
+byte address[] = "00001";
 
 RF24 radio(CE_PIN, CSN_PIN);
 MotorShield shield;

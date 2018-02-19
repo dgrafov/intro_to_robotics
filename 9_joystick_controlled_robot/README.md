@@ -1,4 +1,4 @@
-# 11. Radio controlled moving robot
+# 9. Radio controlled moving robot
 
 ## Description
 Transmitter board is has a joystick connected. When joystick is moved, transmitter converts the movement

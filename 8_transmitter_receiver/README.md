@@ -1,4 +1,4 @@
-# 10. Radio transmitter and receiver
+# 8. Radio transmitter and receiver
 
 ## Description
 Transmitter board is continuously sending messages via radio channnel. Receiver board gets the messages 
@@ -13,6 +13,7 @@ and prints them to the console output.
 
 ## New C++ knowledge
 * switch
+* array
 
 ## Requirements
 * [RF24](https://github.com/nRF24/RF24) library must be imported to Arduino IDE (available in Arduino IDE library manager).
