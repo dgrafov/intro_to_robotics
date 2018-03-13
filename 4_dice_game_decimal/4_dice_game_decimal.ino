@@ -1,42 +1,47 @@
-int BUTTON_PIN = 2;  
-int LEDS_NUM = 6;
-int ANIMATION_DELAY = 100;
+
+
+
+const int BUTTON_PIN = 2;  
+const int LED_PINS[] = {7, 8, 9, 10, 11, 12};
+const int LEDS_NUM = sizeof(LED_PINS) / sizeof(LED_PINS[0]);
+const int ANIMATION_DELAY = 100;
  
 void setup() 
 {  
-  Serial.begin(9600);
+  Serial.begin(115200);
   
   pinMode(BUTTON_PIN, INPUT);
-  pinMode(7, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(12, OUTPUT);
+  
+  for (const auto pin : LED_PINS)
+  {
+    pinMode(pin, OUTPUT);
+  }   
+  
+  resetAllLeds();
   
   randomSeed(analogRead(0));
 }
 
 void resetAllLeds()
 {
-  digitalWrite(7, LOW);
-  digitalWrite(8, LOW);
-  digitalWrite(9, LOW);
-  digitalWrite(10, LOW);
-  digitalWrite(11, LOW);
-  digitalWrite(12, LOW);
+  for (const auto pin : LED_PINS)
+  {
+    digitalWrite(pin, LOW);
+  }   
 }
 
-void setAllLeds()
+int nextLed(int led) 
 {
-  digitalWrite(7, HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
+  return led >= (LEDS_NUM - 1) ? 0 : led + 1;
+  /* the same but with if-else 
+  if (led >= LEDS_NUM - 1)
+  {
+    return 0;
+  }
+  return led + 1;*/
 }
 
+int curLed = LEDS_NUM - 1;
 int lastButtonState = 0;
 long randomNum = 0;
 
@@ -46,9 +51,14 @@ void loop()
 
   if (buttonState == HIGH) 
   { 
-    resetAllLeds();  
-    delay(ANIMATION_DELAY);
-    setAllLeds();  
+    if (lastButtonState == LOW)
+    {
+      resetAllLeds();  
+      curLed = LEDS_NUM;
+    }
+    Serial.println(curLed);
+    digitalWrite(LED_PINS[curLed], LOW);    
+    digitalWrite(LED_PINS[curLed = nextLed(curLed)], HIGH);
     delay(ANIMATION_DELAY);
   }
   else // buttonState == LOW
@@ -56,20 +66,20 @@ void loop()
     if (lastButtonState == HIGH)
     {
       resetAllLeds();  
-      randomNum = random(7, 13);
+      randomNum = random(1, 6);
       
       Serial.println(randomNum);
+    }
     
-      for (int i = 7; i < LEDS_NUM; i++)
+    for (int i = 0; i < LEDS_NUM; ++i)
+    {
+      if (i < randomNum)
       {
-        if (i < randomNum)
-        {
-          digitalWrite(i, HIGH);
-        }
-        else
-        {
-          digitalWrite(i, LOW);  
-        }
+        digitalWrite(LED_PINS[i], HIGH);
+      }
+      else
+      {
+        digitalWrite(LED_PINS[i], LOW);  
       }
     }
   }

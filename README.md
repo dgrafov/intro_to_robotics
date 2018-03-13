@@ -19,8 +19,6 @@ Videos for the examples can be found in [shared folder](https://drive.google.com
 The classes which are reused in several examples are situated in the **libraries** folder and can be included as libraries
 (.zip files) to Arduino IDE
 
-Folder **additional examples** contains some examples based on basic with a bit more advanced logic and C++ code.
-
 There is also **class_materials** folder, which contains a [separate repository](https://github.com/dgrafov/intro_to_robotics_class_materials) added here as a submodule.
 Please update it (or better introduce a script for updating it) whenever you add a new example or change the existing one. 
 

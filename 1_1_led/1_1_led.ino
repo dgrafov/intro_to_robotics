@@ -1,6 +1,6 @@
 
-int LED_PIN = 12;
-int DELAY = 500; //ms
+const int LED_PIN = 12;
+const int DELAY = 500; //ms
 
 void setup()
 {
